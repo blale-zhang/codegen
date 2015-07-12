@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+ 		http://www.springframework.org/schema/context/spring-context-3.0.xsd ">
+
+
+	<!-- 引用各模块的spring配置文件 -->
+	<import resource="classes/applicationContext.xml"></import>
+	<import resource="classes/applicationContext-real-write.xml"></import>
+	
+	
+<!-- 	<import resource="classes/applicationContext-dao.xml"></import>
+	<import resource="classes/applicationContext-controller.xml"></import> -->
+	<!-- 配置jsp view处理 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/custom/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 扫描controller -->
+	<context:component-scan base-package="org.blade.personal.controller" />
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+
+</beans>

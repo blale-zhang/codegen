@@ -1,0 +1,5 @@
+## delete
+
+		String deleteSql = " delete from ${tableName} where id = ? ";
+		int effected = DbUtils.excute(deleteSql).attach(id);
+		return effected;

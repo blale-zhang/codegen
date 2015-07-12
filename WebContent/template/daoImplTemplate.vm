@@ -1,0 +1,34 @@
+## dao template;
+
+package abc.dao.impl;
+
+
+@Repository("${entity}Dao")
+public class ${entity}DaoImpl implements ${entity}Dao{
+
+	public void findByPage(Pager<${entity}> page,${entity} entity){
+	
+	}
+	
+	public int delete(${entity} entity){
+	
+		#parse("${dao_delete}")
+	
+	}
+	
+	public int update(${entity} entity){
+	
+		return 0;
+	}
+	
+	public int add(${entity} entity){
+	
+		return 0;
+	}
+	
+	public int batchAdd(List<${entity}> entities){
+	
+		return 0;
+	}
+
+}
