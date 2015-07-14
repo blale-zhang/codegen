@@ -6,16 +6,21 @@ package abc;
 public class $entity{
 
 
-	#set($char = "")
+	
 	#foreach( $item in $properties )
 		#if( ${item.pramaryKey} == 1 ) 
 		@Id
 		#end
 		
+		
+		#set($methodName = $item.propertyName)
+		
+		
+		
 		@Column(name="$item.propertyName")
 		private $item.dataType $item.propertyName;
 			
-		public $item.dataType get${item.propertyName}(){
+		public $item.dataType get$methodName.toUpperCase()(){
 			return this.$item.propertyName;
 		} 
 		public void set${item.propertyName}(${item.dataType} ${item.propertyName}){
