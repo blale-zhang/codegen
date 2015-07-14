@@ -43,7 +43,6 @@ public class SelectClause implements Clause {
 					
 				return this.clause.build(clause);
 			}
-
 		}
 		return this;
 	}

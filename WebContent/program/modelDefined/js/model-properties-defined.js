@@ -102,8 +102,16 @@ define('model-properties-defined',['jquery','base','liger.all'],function(require
     	 $.ligerDialog.confirm('是否删除所选记录', function (yes) {
     		var rows =  $list.getSelectedRows();
 			var param = {role:liger.toJSON(rows)};
-	       /* $.ajax({
-	    		url: ctx+ '/role/delete.do',
+			var ids = [];
+			for(var i = 0; i < rows.length; i++){
+				ids.push(rows[i].id);
+				if(i+1 < rows.length){
+					ids.push(',');
+				}
+			}
+			var param = {ids:ids.join('')};
+	        $.ajax({
+	    		url: ctx+ '/model/deleteProperties.do',
 	    		type : 'POST',
 	    		dataType : 'json',
 	    		data : param,
@@ -113,7 +121,7 @@ define('model-properties-defined',['jquery','base','liger.all'],function(require
 	    				$list.reload();
 	    			}
 	    		}
-	        });*/
+	        });
     		});
     }
     
@@ -135,26 +143,6 @@ define('model-properties-defined',['jquery','base','liger.all'],function(require
         if (!row) { alert('请选择行'); return; }
         $list.beginEdit(row);
  
-    	
-    }
-
-    /**
-     * 分发权限
-     */
-    function dispathAuthority(){
-    	
-    	$.ligerDialog.open({
-			height : 500,
-			url : ctx+'/custom/authority-mgr.jsp',
-			width : 900,
-			showMax : true,
-			showToggle : true,
-			showMin : true,
-			isResize : true,
-			slide : true,
-			title:'添加权限'
-		}); 
-    	
     	
     }
 

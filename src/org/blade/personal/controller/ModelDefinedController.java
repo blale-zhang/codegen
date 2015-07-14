@@ -123,5 +123,13 @@ public class ModelDefinedController {
 		String ids = MapUtils.getString(reqParam,"ids");
 		return modelDefinedManager.removeModelDefined(ids);
 	}
+	
+	@ResponseBody
+	@RequestMapping("deleteProperties")
+	public int deleteModelProperties(@RequestParam Map reqParam){
+		
+		String ids = MapUtils.getString(reqParam,"ids");
+		return modelDefinedManager.removeModelPropertyDefined(ids);
+	}
 
 }

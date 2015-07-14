@@ -23,7 +23,7 @@ public class EntityCodeEngine implements CodeEngine {
 			
 			VelocityEngine velocityEngine = new VelocityEngine();
 			 
-			properties.setProperty(VelocityEngine.FILE_RESOURCE_LOADER_PATH, "E:\\zsh_workspace\\codeGen\\src\\org\\blade\\personal\\engine\\code");
+			properties.setProperty(VelocityEngine.FILE_RESOURCE_LOADER_PATH, "E:\\git\\codeGen\\src\\org\\blade\\personal\\engine\\code\\");
 			 
 			velocityEngine.init(properties);
 
