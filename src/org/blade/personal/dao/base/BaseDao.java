@@ -88,6 +88,7 @@ public class BaseDao<T> extends BladeHibernateGenericDao<T> {
 			page.setEntities(list);
 		}
 	}
+	
 
 	/**
 	 * save enity

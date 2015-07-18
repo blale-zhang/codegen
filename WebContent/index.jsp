@@ -59,7 +59,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
-	<form class="login-form" action="http://www.keenthemes.com/preview/metronic_admin/index.html" method="post">
+	<form class="login-form" action="${ctx}/login/login.do" method="post">
 		<h3 class="form-title">Login to your account</h3>
 		<div class="alert alert-danger display-hide">
 			<button class="close" data-close="alert"></button>
@@ -72,7 +72,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<label class="control-label visible-ie8 visible-ie9">Username</label>
 			<div class="input-icon">
 				<i class="fa fa-user"></i>
-				<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username"/>
+				<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="userName"/>
 			</div>
 		</div>
 		<div class="form-group">

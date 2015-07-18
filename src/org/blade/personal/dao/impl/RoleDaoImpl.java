@@ -1,10 +1,13 @@
 package org.blade.personal.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.blade.personal.dao.RoleDao;
 import org.blade.personal.dao.base.BaseDao;
+import org.blade.personal.dao.base.EntityMapper;
 import org.blade.personal.mode.Role;
 import org.blade.personal.utils.Pager;
 import org.hibernate.Session;
@@ -61,7 +64,15 @@ public class RoleDaoImpl extends BaseDao<Role> implements RoleDao {
 	public void pagingQuery(Pager<Role> page, Map param) {
 
 		String sql = " select * from sys_role where 1=1 ";
-		super.pagingQuery(page, sql, param);
+		Set<String> keySet = param.keySet();
+		
+		List arr = new ArrayList();
+		for(String key : keySet){
+			sql += " and " + key + " = ? " ;
+			arr.add(param.get(key));
+		}
+		super.pagingQuery(page, sql, arr.toArray(),
+				new EntityMapper<Role>(Role.class));
 
 	}
 

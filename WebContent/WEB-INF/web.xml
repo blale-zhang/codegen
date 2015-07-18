@@ -13,9 +13,9 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
- <!-- 	<filter>
+ 	<filter>
 		<filter-name>sessionFilter</filter-name>
-		<filter-class>com.catt.util.SessionFilter</filter-class>
+		<filter-class>org.blade.personal.utils.SessionFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>sessionFilter</filter-name>
@@ -24,13 +24,12 @@
 	
 	<filter>
 		<filter-name>authorityFilter</filter-name>
-		<filter-class>com.catt.util.AuthorityFilter</filter-class>
+		<filter-class>org.blade.personal.utils.AuthorityFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>authorityFilter</filter-name>
 		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
- -->	
 
 	<filter>
 	    <filter-name>openSessionInViewFilter</filter-name>
