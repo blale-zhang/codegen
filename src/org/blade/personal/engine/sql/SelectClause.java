@@ -5,6 +5,11 @@ import java.util.List;
 import org.blade.personal.engine.DdlKeyWord;
 import org.blade.personal.mode.SqlSelectedItemDefined;
 
+/**
+ * SELECT子句类
+ * @author ZGF
+ *
+ */
 public class SelectClause implements Clause {
 
 	private List<SqlSelectedItemDefined> selectedItems;
