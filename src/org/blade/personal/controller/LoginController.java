@@ -81,7 +81,7 @@ public class LoginController {
 			session.setAttribute("userInfo", user);
 			//TODO query the authorities of current user.
 			session.setAttribute("userAuth", authorityManager.queryAllTheAuthorities(user.getId()));
-			to = new ModelAndView("add-role");
+			to = new ModelAndView("../main");
 		}else{
 			to = new ModelAndView("404");
 		}
