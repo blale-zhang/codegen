@@ -22,7 +22,11 @@ define('main',['jquery','base',,'liger.all'],function(require, exports, module){
 	                })
 		 $("#layout").ligerLayout({ leftWidth: 200});
 		
-		 $("#center").ligerTab({height:'100%',width:'100%'});
+		 $("#center").ligerTab({height:'100%',width:'100%', onBeforeAddTabItem:function(aaa){
+			 console.log(aaa);}
+		 });
+		 
+		 
 	     $.ajax({
 			url: ctx+ '/auth/loadNavigation.do',
 			type : 'POST',
@@ -75,10 +79,11 @@ define('main',['jquery','base',,'liger.all'],function(require, exports, module){
 	function addTab(url,name){
 		
 		var navTab =  $("#center").ligerGetTabManager();
-		if(!navTab.isTabItemExist(name)){
-			navTab.addTabItem({ url: url,text:name });
+		var tabId = { url: url,text:name ,tabid:name,tabId:name};
+		if(!navTab.isTabItemExist(tabId.text)){
+			navTab.addTabItem(tabId);
 		}else{
-			navTab.selectTabItem(name);
+			navTab.selectTabItem(tabId.tabId);
 		}
 		
 	}
