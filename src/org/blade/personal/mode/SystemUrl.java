@@ -8,6 +8,8 @@ import javax.persistence.Table;
 
 /**
  * 
+ * 系统URL实体类
+ * 
  * @author zgf
  *
  */
@@ -41,7 +43,7 @@ public class SystemUrl {
 	private int type;
 	
 	@Column(name="parent_id")
-	private Long parentId;
+	private Long parentId = 0L;//默认值
 
 	public String getUrl() {
 		return url;

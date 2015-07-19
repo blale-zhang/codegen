@@ -1,6 +1,5 @@
 package org.blade.personal.dao.impl;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -9,11 +8,9 @@ import org.blade.personal.dao.base.AuthorityRowMapper;
 import org.blade.personal.dao.base.BaseDao;
 import org.blade.personal.mode.Authority;
 import org.blade.personal.utils.Pager;
-import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.stereotype.Repository;
 
 @Repository("AuthorityDao")
@@ -55,7 +52,11 @@ public class AuthorityDaoImpl extends BaseDao<Authority> implements
 	public int batchUpdate(final List<Authority> authorities) {
 
 		Session session = this.getSession();
-		return (Integer) session.save(authorities);
+		int effected = 0;
+		for(Authority authority :authorities){
+			effected += (Long)session.save(authority);
+		}
+		return effected;
 	}
 
 	@Override

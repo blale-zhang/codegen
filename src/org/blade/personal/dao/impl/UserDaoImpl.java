@@ -1,18 +1,17 @@
 package org.blade.personal.dao.impl;
 
-import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.blade.personal.dao.UserDao;
 import org.blade.personal.dao.base.BaseDao;
 import org.blade.personal.dao.base.EntityMapper;
 import org.blade.personal.mode.User;
 import org.blade.personal.utils.Pager;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.stereotype.Repository;
 
 @Repository("UserDao")
@@ -27,14 +26,15 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
 	@Override
 	public int update(final User u) {
 		Session session = super.getSession();
-		return (Integer) session.save(u);
+		session.update(u);
+		return u.getId().intValue();
 	}
 
 	@Override
 	public int delete(final String ids) {
 		final String deleteHql = " delete from sys_usr where id in(?) ";
 		Session session = super.getSession();
-		return session.createSQLQuery(deleteHql).setString(1, ids)
+		return session.createSQLQuery(deleteHql).setString(0, ids)
 				.executeUpdate();
 	}
 
@@ -47,7 +47,8 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
 	@Override
 	public List<User> queryForList(String querySql) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.jdbcTemplate.query(querySql, new EntityMapper(
+				User.class));
 	}
 
 	@Override
@@ -63,8 +64,18 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
 	}
 
 	@Override
-	public void pagingQuery(Pager<User> page, Map param) {
-
+	public void pagingQuery(Pager<User> page, Map params) {
+		
+		String querySql = " select * from sys_usr where 1=1 ";
+		Set<String> keySet = params.keySet();
+		List<Object> valus = new ArrayList();
+		for(String key : keySet){
+			querySql += " and a." + key + " = " + params.get(key);
+			valus.add(params.get(key));
+		}
+		this.pagingQuery(page, querySql, valus.toArray(),
+				new EntityMapper(User.class));
+		
 	}
 
 	@Override

@@ -13,10 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/*
+/**
  * 用过滤器验证登陆,看session是否有效
  */
 public class SessionFilter implements Filter {
+	
 	private static final Logger log = Logger.getLogger(SessionFilter.class.getName());
 	FilterConfig fc;
 
@@ -34,7 +35,7 @@ public class SessionFilter implements Filter {
 		
 		HttpServletResponse hres = (HttpServletResponse) response;
 		HttpSession session = hreq.getSession();
-		if (session != null && session.getAttribute("userInfo") != null) {
+		if (session != null && session.getAttribute(KeyWords.USER_INFO) != null) {
 			log.info("session is exist");
 			chain.doFilter(request, response);
 		} else {

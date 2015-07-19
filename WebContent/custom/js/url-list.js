@@ -55,16 +55,18 @@ define('url-list',['jquery','base','liger.messageBox','liger.dialog','liger.all'
 			                      width: 180,
 			                      selectBoxWidth: 200,
 			                      selectBoxHeight: 200, valueField: 'id', 
-			                      tree: { url: ctx + '/url/queryForChileren.do?id=0', ajaxType: 'get',
+			                      tree: { url: ctx + '/url/queryForChileren.do?id=0', ajaxType: 'post',
 			                    	  single:true,
 			                    	  
 			                    	  checkbox:false,
 			                    	  isLeaf : function(data)
 			                          {
+			                    		  debugger;
 			                              if (!data) return false;
 			                              return data.type == "parentId";
 			                          },delay: function(e)
 			                          {
+			                        	  debugger;
 			                              var data = e.data;
 			                              return { url: ctx + '/url/queryForChileren.do?id=' + data.id };
 			                             
@@ -95,6 +97,9 @@ define('url-list',['jquery','base','liger.messageBox','liger.dialog','liger.all'
 	 */
 	function query(){
 		$.ligerDialog.success('查询');
+		
+		
+		
 	} 
 	
 	/**
@@ -107,7 +112,7 @@ define('url-list',['jquery','base','liger.messageBox','liger.dialog','liger.all'
 			return;
 		}
 		var form = liger.get("form");
-		console.log(data);
+//		console.log(data);
 		form.setData(data);
 	}
 	

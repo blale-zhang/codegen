@@ -8,7 +8,6 @@ import java.util.Set;
 import org.blade.personal.dao.ModelDefinedDao;
 import org.blade.personal.dao.base.BaseDao;
 import org.blade.personal.dao.base.EntityMapper;
-import org.blade.personal.mode.ClassTemplateDefined;
 import org.blade.personal.mode.ModelDefined;
 import org.blade.personal.utils.Pager;
 import org.springframework.stereotype.Repository;

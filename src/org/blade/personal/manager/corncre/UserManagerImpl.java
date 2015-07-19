@@ -18,7 +18,12 @@ public class UserManagerImpl implements UserManager {
 	private UserDao userDao;
 
 	@Override
-	public int addUser(User u) {
+	public int saveUser(User u) {
+		
+		if(null != u.getId()){
+			return this.updateUser(u);
+		}
+		
 		return userDao.add(u);
 	}
 
@@ -42,7 +47,7 @@ public class UserManagerImpl implements UserManager {
 	}
 	
 	@Override
-	public void pagingQuery(Pager<User> page, Map param) {
+	public void pagingQuery(Pager<User> page, Map<String,Object> param) {
 		this.userDao.pagingQuery(page,param);
 	}
 	

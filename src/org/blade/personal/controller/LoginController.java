@@ -1,5 +1,7 @@
 package org.blade.personal.controller;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -8,6 +10,7 @@ import org.apache.commons.collections.MapUtils;
 import org.blade.personal.manager.AuthorityManager;
 import org.blade.personal.manager.UserManager;
 import org.blade.personal.mode.User;
+import org.blade.personal.utils.KeyWords;
 import org.blade.personal.utils.SpringMvcUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -78,9 +81,14 @@ public class LoginController {
 		User user =userManager.getUserByNameAndPassword(usrName, password);
 		if(null != user){
 			HttpSession session = SpringMvcUtils.getHttpSession();
-			session.setAttribute("userInfo", user);
+			session.setAttribute(KeyWords.USER_INFO, user);
 			//TODO query the authorities of current user.
-			session.setAttribute("userAuth", authorityManager.queryAllTheAuthorities(user.getId()));
+			List<Map<String, Object>> authorites = authorityManager.queryAllTheAuthorities(user.getId());
+			Map fastAuthorites = new HashMap();
+			for(Map auth : authorites){
+				fastAuthorites.put(MapUtils.getObject(auth, KeyWords.URL), auth);
+			}
+			session.setAttribute(KeyWords.USER_AUTH, fastAuthorites);
 			to = new ModelAndView("../main");
 		}else{
 			to = new ModelAndView("404");
@@ -104,9 +112,14 @@ public class LoginController {
 		if (code.equals(session.getAttribute("code"))){
 			User user =userManager.getUserByNameAndPassword(usrName, password);
 			if(null != user){
-				session.setAttribute("userInfo", user);
+				session.setAttribute(KeyWords.USER_INFO, user);
 				//TODO query the authorities of current user.
-				session.setAttribute("userAuth", authorityManager.queryAllTheAuthorities(user.getId()));
+				List<Map<String, Object>> authorites = authorityManager.queryAllTheAuthorities(user.getId());
+				Map fastAuthorites = new HashMap();
+				for(Map auth : authorites){
+					fastAuthorites.put(MapUtils.getObject(auth, KeyWords.URL), auth);
+				}
+				session.setAttribute(KeyWords.USER_AUTH, fastAuthorites);
 				return SUCCESS;
 			}else{
 				return PASSWORD_OR_USRNAME_INVALID;

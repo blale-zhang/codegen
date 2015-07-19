@@ -54,7 +54,7 @@ public class RegiestController {
 		if(count > 0){
 			return this.USER_EXIST;
 		}
-		return userManager.addUser(user);
+		return userManager.saveUser(user);
 	}
 	
 }

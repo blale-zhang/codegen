@@ -39,7 +39,7 @@ public class UsrController {
 	public int saveRoles(@RequestParam Map data){
 		String userJson = MapUtils.getString(data, "data");
 		User user = JSON.parseObject(userJson, User.class);
-		return userManager.addUser(user);
+		return userManager.saveUser(user);
 	}
 	
 	/**

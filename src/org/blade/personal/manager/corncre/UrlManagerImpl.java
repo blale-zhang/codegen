@@ -37,7 +37,19 @@ public class UrlManagerImpl implements UrlManager{
 	@Override
 	public int deleteUrl(SystemUrl url) {
 		
-		return systemUrlDao.delete(url.getId());
+		int effected = systemUrlDao.delete(url.getId());
+		
+		//如果被删除的url并非 叶子节点的话，需要把 朴删除URL的子节点绑定到 最近的祖先上去。
+		if(effected > 0){
+			
+			List <SystemUrl> children = systemUrlDao.queryForList("select * from sys_url where 1=1 and parent_id = " + url.getId());
+
+			for(SystemUrl sysUrl : children){
+				systemUrlDao.update(sysUrl);
+			}
+		}
+		
+		return effected;
 	}
 
 	@Override

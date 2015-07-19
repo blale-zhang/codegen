@@ -1,7 +1,6 @@
 package org.blade.personal.utils;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -14,8 +13,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import org.apache.commons.collections.MapUtils;
 
 public class AuthorityFilter implements Filter {
 	
@@ -39,23 +36,14 @@ public class AuthorityFilter implements Filter {
 	        HttpSession session = hreq.getSession(); 
 
 	        //首先要有登录,其次要有权限,权限过滤要进行请求区别，如果是ajax则提示无权限，或者直接跳到登录界面
-			if (session != null && session.getAttribute("userInfo") != null) {
+			if (session != null && session.getAttribute(KeyWords.USER_INFO) != null) {
 				log.info("session is exist");
 				// 这里写权限过滤逻辑
 		    	// authority filter logic
-	        	List<Map<String,Object>> authorities = (List<Map<String,Object>>)session.getAttribute("userAuth");
+	        	Map<String,Map> authorities = (Map<String,Map>)session.getAttribute(KeyWords.USER_AUTH);
 	        	String url = hreq.getRequestURL().toString();
-	        	boolean allow = false;
-	        	for(Map map : authorities){
-	        		
-	        		//后续考滤，对操作类型进行过滤
-	        		if( url.indexOf(MapUtils.getString(map, "url")) >= 0){
-	        			allow = true;
-	        			break;
-	        		}
-	        	}
-	        	System.out.println(url);
-	            if(!allow){
+	        	url = url.substring(url.indexOf(hreq.getContextPath())+ hreq.getContextPath().length(), url.length());
+	            if(!authorities.containsKey(url)){
 	                hres.sendRedirect(urlwrong);//重定向到该url  
 	                return;
 	            }
