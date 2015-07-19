@@ -3,6 +3,8 @@
  */
 package org.blade.personal.manager;
 
+import java.util.logging.Logger;
+
 import org.blade.personal.mode.SqlDefined;
 
 /**
@@ -10,6 +12,7 @@ import org.blade.personal.mode.SqlDefined;
  *
  */
 public interface SqlManager {
+	public  static final Logger log = Logger.getLogger(SqlManager.class.getName());
 
 	int saveSqlDefined(SqlDefined sqlDefined );
 	

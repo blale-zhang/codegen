@@ -2,6 +2,7 @@ package org.blade.personal.manager;
 
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.blade.personal.mode.Authority;
 import org.blade.personal.mode.User;
@@ -14,6 +15,7 @@ import org.blade.personal.utils.Pager;
  */
 public interface AuthorityManager {
 
+	public  static final Logger log = Logger.getLogger(AuthorityManager.class.getName());
 	/**
 	 * Save authority 
 	 * @param authority 

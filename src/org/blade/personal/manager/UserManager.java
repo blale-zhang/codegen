@@ -1,6 +1,7 @@
 package org.blade.personal.manager;
 
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.blade.personal.mode.User;
 import org.blade.personal.utils.Pager;
@@ -11,19 +12,20 @@ import org.blade.personal.utils.Pager;
  *
  */
 public interface UserManager {
+	public  static final Logger log = Logger.getLogger(UserManager.class.getName());
 
 	/**
-	 * add user
-	 * @param u the instance of User
-	 * @return the effected number;
+	 * save user
+	 * @param u The instance of User
+	 * @return The effected number;
 	 */
-	public int addUser(User u);
+	public int saveUser(User u);
 	
 	public int updateUser(User u);
 	
 	public int deleteUser(User u);
 	
-	public void pagingQuery(Pager<User> page,Map params);
+	public void pagingQuery(Pager<User> page,Map<String,Object> params);
 	
 	/**
 	 * Get user information by name and password

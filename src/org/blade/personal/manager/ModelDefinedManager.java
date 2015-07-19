@@ -2,6 +2,7 @@ package org.blade.personal.manager;
 
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.blade.personal.mode.ModelDefined;
 import org.blade.personal.mode.ModelPropertyDefined;
@@ -13,6 +14,7 @@ import org.blade.personal.utils.Pager;
  *
  */
 public interface ModelDefinedManager {
+	public  static final Logger log = Logger.getLogger(ModelDefinedManager.class.getName());
 
 	/**
 	 * 保存模型

@@ -1,6 +1,7 @@
 package org.blade.personal.manager;
 
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.blade.personal.mode.ClassTemplateContent;
 import org.blade.personal.mode.ClassTemplateDefined;
@@ -12,6 +13,7 @@ import org.blade.personal.utils.Pager;
  *
  */
 public interface ClassTemplateManager {
+	public  static final Logger log = Logger.getLogger(ClassTemplateManager.class.getName());
 
 	/**
 	 * 保存类模板

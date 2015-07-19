@@ -2,6 +2,7 @@ package org.blade.personal.manager;
 
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.blade.personal.mode.Role;
 import org.blade.personal.utils.Pager;
@@ -12,6 +13,7 @@ import org.blade.personal.utils.Pager;
  *
  */
 public interface RoleManager {
+	public  static final Logger log = Logger.getLogger(RoleManager.class.getName());
 
 	/**
 	 * Add a role with a  <B>system role</B> class instace.

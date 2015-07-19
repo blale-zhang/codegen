@@ -2,6 +2,7 @@ package org.blade.personal.manager;
 
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.blade.personal.mode.SystemUrl;
 import org.blade.personal.utils.Pager;
@@ -14,11 +15,17 @@ import org.blade.personal.utils.Pager;
  */
 
 public interface UrlManager {
+	public  static final Logger log = Logger.getLogger(UrlManager.class.getName());
 
 	int addUrl(SystemUrl url);
 
 	void updateUrl(SystemUrl url);
 
+	/**
+	 * Delete system URL
+	 * @param url
+	 * @return
+	 */
 	int deleteUrl(SystemUrl url);
 
 	public void pagingQuery(Pager<SystemUrl> page, Map params);
