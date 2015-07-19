@@ -3,6 +3,7 @@ package org.blade.personal.dao.base;
 import java.lang.reflect.Field;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import javax.persistence.Column;
 
 import org.springframework.jdbc.core.RowMapper;
@@ -28,12 +29,12 @@ public class EntityMapper<T> implements RowMapper<T> {
 		try {
 			t = (T) this.clazz.newInstance();
 			Field[] fields = clazz.getDeclaredFields();
+			
 			for (Field f : fields) {
 				Column a = (Column) f.getAnnotation(Column.class);
 				if(null == a){
 					continue;
 				}
-				f.getType();
 				f.setAccessible(true);
 				f.set(t, rs.getObject(a.name()));
 				f.setAccessible(false);
