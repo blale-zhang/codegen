@@ -9,19 +9,44 @@ import org.blade.personal.utils.Pager;
 
 /**
  * 模型定义业务逻辑
- * @author Thinkpad
+ * @author ZGF
  *
  */
 public interface ModelDefinedManager {
 
+	/**
+	 * 保存模型
+	 * @param ModelDefined
+	 * @return
+	 */
 	public int saveModelDefined(List<ModelDefined> ModelDefined);
 	
+	/**
+	 * 删除模型
+	 * @param id
+	 * @return
+	 */
 	public int removeModelDefined(String id);
 
+	/**
+	 * 保存模型属性
+	 * @param modelPropertyDefined
+	 * @return
+	 */
 	public int saveModelPropertyDefined(List<ModelPropertyDefined> modelPropertyDefined);
 	
+	/**
+	 * 删除模型属性
+	 * @param id
+	 * @return
+	 */
 	public int removeModelPropertyDefined(String id);
 	
+	/**
+	 * 查找模型
+	 * @param pager
+	 * @param params
+	 */
 	public void findModelDefinedForPage(Pager<ModelDefined> pager, Map params);
 	
 	

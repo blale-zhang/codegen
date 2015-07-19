@@ -13,17 +13,50 @@ import org.blade.personal.utils.Pager;
  */
 public interface ClassTemplateManager {
 
+	/**
+	 * 保存类模板
+	 * @param ctd
+	 * @return
+	 */
 	public int saveClassTemplateDefined(ClassTemplateDefined ctd);
 	
+	/**
+	 * 保存类模板内容
+	 * @param ctt
+	 * @return
+	 */
 	public int saveClassTemplateContent(ClassTemplateContent ctt);
 	
+	/**
+	 * 删除类模板定义
+	 * @param ctd
+	 * @return
+	 */
 	public int removeClassTemplateDefined(ClassTemplateDefined ctd);
 	
+	/**
+	 * 修改类模板定义
+	 * @param ctd
+	 */
 	public void modifyClassTemplateDefined(ClassTemplateDefined ctd);
 	
+	/**
+	 * 修改类模板内容
+	 * @param ctt
+	 */
 	public void modifyClassTemplateContent(ClassTemplateContent ctt);
 
+	/**
+	 * 分页查询类模板
+	 * @param page
+	 * @param params
+	 */
 	public void queryForPage(Pager<ClassTemplateDefined> page, Map params);
 	
+	/**
+	 * 查询类模板内容
+	 * @param classTemplateContent
+	 * @return
+	 */
 	public ClassTemplateContent queryClassTemplateContent(ClassTemplateContent classTemplateContent);
 }
