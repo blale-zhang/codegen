@@ -11,6 +11,9 @@ import org.blade.personal.framework.orm.base.Attribute;
  */
 public abstract class AbstractTypeAlise<T> implements TypeAlies<T>{
 
+	/**
+	 * 属性
+	 */
 	protected Attribute<T> attr;
 	
 	/**
