@@ -11,9 +11,9 @@ public interface TypeAlies<T> {
 	
 	/**
 	 * 约定实例化方法
-	 * @param name
-	 * @param value
-	 * @param table
+	 * @param name 属性名
+	 * @param value 值
+	 * @param table 表别名
 	 * @return
 	 */
 	public TypeAlies<T> newInstance(String name,T value, String table);
