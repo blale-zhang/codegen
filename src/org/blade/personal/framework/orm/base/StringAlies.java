@@ -1,6 +1,5 @@
 package org.blade.personal.framework.orm.base;
 
-import org.blade.personal.engine.DdlKeyWord;
 import org.blade.personal.framework.orm.AbstractTypeAlise;
 import org.blade.personal.framework.orm.TypeAlies;
 
