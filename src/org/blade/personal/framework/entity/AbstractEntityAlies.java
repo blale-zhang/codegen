@@ -14,13 +14,15 @@ public class AbstractEntityAlies<T> implements EntityAlies<T> {
 	 * The alies of  table.
 	 */
 	protected String alies;
-	
-	@Override
-	public EntityAlies<T> create(T instance) {
-	
+
+	public AbstractEntityAlies(String alies) {
+		super();
+		this.alies = alies;
 		
-		return null;
+		
 	}
+	
+	
 	
 	
 
