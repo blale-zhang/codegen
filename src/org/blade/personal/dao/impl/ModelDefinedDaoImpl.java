@@ -17,7 +17,7 @@ public class ModelDefinedDaoImpl extends BaseDao<ModelDefined> implements ModelD
 
 	@Override
 	public int add(List<ModelDefined> modelDefineds) {
-		return super.save(modelDefineds.get(0));
+		return super.saveEntity(modelDefineds.get(0));
 	}
 
 	@Override

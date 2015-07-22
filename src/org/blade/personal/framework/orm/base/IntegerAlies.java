@@ -5,7 +5,7 @@ import org.blade.personal.framework.orm.TypeAlies;
 
 /**
  * 整型别名类
- * @author Thinkpad
+ * @author ZGF
  *
  */
 public class IntegerAlies extends AbstractTypeAlise<Integer> implements TypeAlies<Integer> {
@@ -16,8 +16,7 @@ public class IntegerAlies extends AbstractTypeAlise<Integer> implements TypeAlie
 			String table) {
 		this.attr = new Attribute<Integer>(name,value);
 		this.tableAlise = table;
-		TypeAlies<Integer> intType = new IntegerAlies();
-		return intType;
+		return this;
 	}
 
 }

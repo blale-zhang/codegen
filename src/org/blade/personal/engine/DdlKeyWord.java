@@ -11,6 +11,7 @@ public interface DdlKeyWord{
 	public final String OR = " or ";
 	public final String IN = " in ";
 	public final String LIKE = " like ";
+	
 	public final String NOT_IN = " not in ";
 	public final String NOT_LIKE = " not like ";
 	public final String BETWEEN = " between ";
@@ -18,7 +19,14 @@ public interface DdlKeyWord{
 	public final String AS = " as ";
 	public final String SPACE = " ";
 	public final String ALL = " * ";
+	public final String EQ = " = ";
+	public final String NOT_EQ = " <> ";
+	public final String GT = " > ";
+	public final String LT = " < ";
+	public final String DOT = ".";
 	
+
+
 	public final String JOIN = " join ";
 	public final String LEFT_JOIN = " left join ";
 	public final String RIGHT_JOIN = " right join ";

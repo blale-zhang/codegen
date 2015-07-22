@@ -17,7 +17,7 @@ public class SystemUrlDaoImpl extends BaseDao<SystemUrl> implements SystemUrlDao
 	@Override
 	public int add(SystemUrl u) {
 		// TODO Auto-generated method stub
-		return this.save(u);
+		return this.saveEntity(u);
 		
 	}
 

@@ -20,7 +20,7 @@ public class SqlSelectedTableDefinedDaoImpl extends
 	@Override
 	public int add(SqlSelectedTableDefined sqlDefined) {
 		// TODO Auto-generated method stub
-		return super.save(sqlDefined);
+		return super.saveEntity(sqlDefined);
 	}
 
 	@Override

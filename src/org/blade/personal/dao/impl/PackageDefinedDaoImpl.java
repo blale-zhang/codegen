@@ -15,7 +15,7 @@ public class PackageDefinedDaoImpl extends BaseDao<PackageDefined> implements Pa
 	@Override
 	public int addPackageDefined(PackageDefined packageDefined) {
 		// TODO Auto-generated method stub
-		return super.save(packageDefined);
+		return super.saveEntity(packageDefined);
 	}
 
 	@Override

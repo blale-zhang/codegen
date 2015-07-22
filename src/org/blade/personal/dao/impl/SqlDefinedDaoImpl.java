@@ -17,7 +17,7 @@ public class SqlDefinedDaoImpl extends BaseDao<SqlDefined> implements SqlDefined
 
 	@Override
 	public int add(SqlDefined sqlDefined) {
-		return super.save(sqlDefined);
+		return super.saveEntity(sqlDefined);
 	}
 
 	@Override

@@ -19,7 +19,7 @@ public class AuthorityDaoImpl extends BaseDao<Authority> implements
 
 	@Override
 	public int addAuthority(Authority authority) {
-		this.save(authority);
+		this.saveEntity(authority);
 
 		return authority.getId() == null ? 0 : 1;
 	}

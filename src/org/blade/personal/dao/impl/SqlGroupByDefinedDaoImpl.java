@@ -20,7 +20,7 @@ public class SqlGroupByDefinedDaoImpl extends BaseDao<SqlGroupByDefined>
 	public int add(SqlGroupByDefined sqlDefined) {
 		// TODO Auto-generated method stub
 
-		return super.save(sqlDefined);
+		return super.saveEntity(sqlDefined);
 	}
 
 	@Override

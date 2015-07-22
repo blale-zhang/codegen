@@ -21,7 +21,7 @@ public class SqlWhereConditionDefinedDaoImpl extends
 	@Override
 	public int add(SqlWhereConditionDefined sqlDefined) {
 		// TODO Auto-generated method stub
-		return super.save(sqlDefined);
+		return super.saveEntity(sqlDefined);
 	}
 
 	@Override

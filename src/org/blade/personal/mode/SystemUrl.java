@@ -44,6 +44,9 @@ public class SystemUrl {
 	
 	@Column(name="parent_id")
 	private Long parentId = 0L;//默认值
+	
+	@Column(name="icon")
+	private String icon;
 
 	public String getUrl() {
 		return url;
@@ -92,5 +95,14 @@ public class SystemUrl {
 	public void setParentId(Long parentId) {
 		this.parentId = parentId;
 	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+	
 	
 }

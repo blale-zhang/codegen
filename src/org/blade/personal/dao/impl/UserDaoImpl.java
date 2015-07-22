@@ -19,7 +19,7 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
 
 	@Override
 	public int add(User u) {
-		this.save(u);
+		this.saveEntity(u);
 		return u.getId() == null ? 0 : 1;
 	}
 

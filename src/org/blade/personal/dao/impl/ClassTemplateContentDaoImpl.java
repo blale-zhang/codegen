@@ -33,7 +33,7 @@ public class ClassTemplateContentDaoImpl extends BaseDao<ClassTemplateContent> i
 	@Override
 	public int add(ClassTemplateContent ClassTemplateContent) {
 		// TODO Auto-generated method stub
-		this.save(ClassTemplateContent);
+		this.saveEntity(ClassTemplateContent);
 		return ClassTemplateContent.id == null ? 0 : 1;
 	}
 

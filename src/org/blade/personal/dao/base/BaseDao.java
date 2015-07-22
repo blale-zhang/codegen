@@ -1,20 +1,16 @@
 package org.blade.personal.dao.base;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.blade.personal.mode.SqlGroupByDefined;
 import org.blade.personal.utils.Pager;
-import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.orm.hibernate3.HibernateCallback;
 
 /**
  * 建议使用jdbcTemplate来做查询，其他操作交给hibernate 实现读写分离。
@@ -96,7 +92,7 @@ public class BaseDao<T> extends BladeHibernateGenericDao<T> {
 	 * @param t
 	 * @return
 	 */
-	public int save(T object) {
+	public int saveEntity(T object) {
 		Session session = this.getSession();
 		Long effected = (Long) session.save(object);
 		return effected.intValue();

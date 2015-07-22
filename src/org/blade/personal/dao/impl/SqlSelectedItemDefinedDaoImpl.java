@@ -18,7 +18,7 @@ public class SqlSelectedItemDefinedDaoImpl extends
 
 	@Override
 	public int add(SqlSelectedItemDefined sqlSelectedItemDefined) {
-		return super.save(sqlSelectedItemDefined);
+		return super.saveEntity(sqlSelectedItemDefined);
 	}
 
 	@Override
