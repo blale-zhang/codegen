@@ -10,7 +10,8 @@ public class FloatAlies extends AbstractTypeAlise<Float> {
 	public TypeAlies<Float> newInstance(String name, Float value, String table) {
 		this.attr = new Attribute<Float>(name,value);
 		this.tableAlise = table;
-		return this;
+		TypeAlies<Float> floatType = new FloatAlies();
+		return floatType;
 	}
 	
 	

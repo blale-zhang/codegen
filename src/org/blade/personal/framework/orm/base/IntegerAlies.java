@@ -14,8 +14,10 @@ public class IntegerAlies extends AbstractTypeAlise<Integer> implements TypeAlie
 	@Override
 	public TypeAlies<Integer> newInstance(String name, Integer value,
 			String table) {
-		// TODO Auto-generated method stub
-		return null;
+		this.attr = new Attribute<Integer>(name,value);
+		this.tableAlise = table;
+		TypeAlies<Integer> intType = new IntegerAlies();
+		return intType;
 	}
 	
 	@Override
