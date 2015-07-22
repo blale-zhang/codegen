@@ -32,8 +32,15 @@ public abstract class AbstractTypeAlise<T> implements TypeAlies<T>{
 		return this.attr.getValue();
 	}
 	
+	@Override
 	public void setValue(T value){
 		this.attr.setValue(value);
+	}
+	
+	@Override
+	public String getClause() {
+		// TODO Auto-generated method stub
+		return this.clause;
 	}
 	
 	

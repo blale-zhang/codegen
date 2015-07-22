@@ -18,8 +18,7 @@ public class FloatAlies extends AbstractTypeAlise<Float> {
 	@Override
 	public String getClause() {
 		// TODO Auto-generated method stub
-		
-		return null;
+		return this.clause;
 	}
 
 }

@@ -19,17 +19,5 @@ public class IntegerAlies extends AbstractTypeAlise<Integer> implements TypeAlie
 		TypeAlies<Integer> intType = new IntegerAlies();
 		return intType;
 	}
-	
-	@Override
-	public String getClause() {
-		return this.clause;
-	}
-
-
-	@Override
-	public Integer getVal() {
-		return this.attr.getValue();
-	}
-	
 
 }
