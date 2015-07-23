@@ -100,7 +100,8 @@ define('user-list',['jquery','base','liger.messageBox','liger.dialog','liger.all
                            { text: '授权', click: assignAuthorities }, { line:true },
                            { text: '权限管理', click: showAuthorityManagement }, { line:true }
                            ]
-                       }
+                       },
+                       detail: { onShowDetail: f_showOrder }
     });
 	
 	/**
@@ -176,6 +177,25 @@ define('user-list',['jquery','base','liger.messageBox','liger.dialog','liger.all
 		$form.setVisible(["roleId"], true);
 	}
 
+	        //显示顾客订单
+	 function f_showOrder(row, detailPanel,callback)
+	        {
+	            var grid = document.createElement('div'); 
+	            $(detailPanel).append(grid);
+	            $(grid).css('margin',10).ligerGrid({
+	                columns:[
+                            { display: '功能名称', name: 'name' },
+                            { display: '是否私有', name: 'isPrivate'},
+                            { display: '[查询]', name: 'read' },
+                            { display: '[新增]', name: 'add' },
+                            { display: '[修改]', name: 'modify' },
+                            { display: '[删除]', name: 'delete' }
+                            ], isScroll: false, showToggleColBtn: false, width: '90%',
+	                data: [] , showTitle: true, columnWidth: 100, tree: { columnName: 'name' },
+					url:ctx + "", onAfterShowData: callback,frozen:false 
+	            });  
+	      }
+	
     $("#pageloading").hide();
 
 });

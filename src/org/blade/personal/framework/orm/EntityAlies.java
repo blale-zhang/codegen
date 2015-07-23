@@ -10,4 +10,6 @@ public interface EntityAlies<T> {
 	public String getEntityName();
 	
 	public String getTable();
+	
+	public String getAlise();
 }

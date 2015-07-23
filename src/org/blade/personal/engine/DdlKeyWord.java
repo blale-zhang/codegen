@@ -24,7 +24,7 @@ public interface DdlKeyWord{
 	public final String GT = " > ";
 	public final String LT = " < ";
 	public final String DOT = ".";
-	
+	public final String WHERE_ONE_EQ_ONE = " 1=1 ";
 
 
 	public final String JOIN = " join ";

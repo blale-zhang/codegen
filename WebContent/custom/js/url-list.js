@@ -54,10 +54,11 @@ define('url-list',['jquery','base','liger.messageBox','liger.dialog','liger.all'
 		                	  options:{
 			                      width: 180,
 			                      selectBoxWidth: 200,
-			                      selectBoxHeight: 200, valueField: 'id', 
+			                      selectBoxHeight: 200, valueField: 'id',textFiel:'name', 
 			                      tree: { url: ctx + '/url/queryForChileren.do?id=0', ajaxType: 'post',
 			                    	  single:true,
-			                    	  
+			                    	  textFieldName:'name',
+			                    	  idFieldName:'id',
 			                    	  checkbox:false,
 			                    	  isLeaf : function(data)
 			                          {
