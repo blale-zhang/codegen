@@ -33,6 +33,11 @@ public abstract class AbstractTypeAlise<T> implements TypeAlies<T>{
 	}
 	
 	@Override
+	public String getName() {
+		return this.attr.getName();
+	}
+	
+	@Override
 	public void setValue(T value){
 		this.attr.setValue(value);
 	}
@@ -47,7 +52,8 @@ public abstract class AbstractTypeAlise<T> implements TypeAlies<T>{
 	protected TypeAlies<T> op(TypeAlies type, String keyWord) {
 		StringBuilder buff = new StringBuilder();
 		clause = buff.append(this.tableAlise).append(DdlKeyWord.SPACE)
-				.append(attr.getName()).append(DdlKeyWord.SPACE)
+				.append(attr.getName())
+				.append(DdlKeyWord.SPACE)
 				.append(keyWord).append(type.getVal()).toString();
 		return this;
 	}

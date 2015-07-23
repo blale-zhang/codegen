@@ -52,7 +52,7 @@ public interface TypeAlies<T> {
 	
 	
 	/**
-	 * Like end with ,eg: like '%%'
+	 * Like end with ,eg: like '%'
 	 * @param type
 	 * @return
 	 */
@@ -106,5 +106,7 @@ public interface TypeAlies<T> {
 	public T getVal();
 	
 	public void setValue(T value);
+	
+	public String getName();
 	
 }

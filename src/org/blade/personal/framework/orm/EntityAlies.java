@@ -7,4 +7,7 @@ package org.blade.personal.framework.orm;
  */
 public interface EntityAlies<T> {
 
+	public String getEntityName();
+	
+	public String getTable();
 }
