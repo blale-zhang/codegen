@@ -80,4 +80,10 @@ public abstract class AbstractEntityAlies<T> implements EntityAlies<T> {
 		return this.tableName;
 	}
 
+	
+	@Override
+	public String getAlise() {
+		// TODO Auto-generated method stub
+		return this.alies;
+	}
 }

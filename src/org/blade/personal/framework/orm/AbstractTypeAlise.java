@@ -44,14 +44,16 @@ public abstract class AbstractTypeAlise<T> implements TypeAlies<T>{
 	
 	@Override
 	public String getClause() {
-		// TODO Auto-generated method stub
+		if(null == this.clause){
+			return this.tableAlise + DdlKeyWord.DOT +  this.attr.getName();
+		}
 		return this.clause;
 	}
 	
 	
 	protected TypeAlies<T> op(TypeAlies type, String keyWord) {
 		StringBuilder buff = new StringBuilder();
-		clause = buff.append(this.tableAlise).append(DdlKeyWord.SPACE)
+		clause = buff.append(this.tableAlise).append(DdlKeyWord.DOT)
 				.append(attr.getName())
 				.append(DdlKeyWord.SPACE)
 				.append(keyWord).append(type.getVal()).toString();
