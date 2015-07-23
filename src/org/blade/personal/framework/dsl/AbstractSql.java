@@ -2,7 +2,6 @@ package org.blade.personal.framework.dsl;
 
 import org.blade.personal.engine.DdlKeyWord;
 import org.blade.personal.framework.dsl.corcre.MySQLSqlClauseFactory;
-import org.blade.personal.framework.dsl.corcre.SimpleClause;
 import org.blade.personal.framework.dsl.corcre.SqlClauseFactory;
 import org.blade.personal.framework.orm.EntityAlies;
 import org.blade.personal.framework.orm.TypeAlies;
