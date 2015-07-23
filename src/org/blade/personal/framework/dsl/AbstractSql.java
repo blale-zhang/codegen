@@ -1,7 +1,9 @@
 package org.blade.personal.framework.dsl;
 
 import org.blade.personal.engine.DdlKeyWord;
+import org.blade.personal.framework.dsl.corcre.MySQLSqlClauseFactory;
 import org.blade.personal.framework.dsl.corcre.SimpleClause;
+import org.blade.personal.framework.dsl.corcre.SqlClauseFactory;
 import org.blade.personal.framework.orm.EntityAlies;
 import org.blade.personal.framework.orm.TypeAlies;
 
@@ -15,6 +17,8 @@ public class AbstractSql implements Sql {
 
 	public Clause clause;
 	
+	private SqlClauseFactory  factory = new MySQLSqlClauseFactory();
+	
 	@Override
 	public Sql select(TypeAlies... alies) {
 		StringBuilder clause = new StringBuilder();
@@ -25,7 +29,8 @@ public class AbstractSql implements Sql {
 				clause.append(",");
 			}
 		}
-		this.clause = new SimpleClause(clause);
+		
+		this.clause = factory.build(clause);
 		return this;
 	}
 
@@ -36,8 +41,7 @@ public class AbstractSql implements Sql {
 		clause.append(DdlKeyWord.FROM).append(DdlKeyWord.SPACE)
 		.append(DdlKeyWord.SPACE).append(entity.getTable())
 		.append(DdlKeyWord.SPACE).append(entity.getAlise());
-		this.clause.setClause(new SimpleClause(clause));
-		
+		this.clause.setClause(factory.build(clause));
 		
 		return this;
 	}
@@ -51,7 +55,7 @@ public class AbstractSql implements Sql {
 			.append(DdlKeyWord.AND)
 			.append(alies[i].getClause());
 		}
-		this.clause.setClause(new SimpleClause(clause));
+		this.clause.setClause(factory.build(clause));
 		return this;
 	}
 
