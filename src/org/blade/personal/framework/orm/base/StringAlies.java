@@ -17,8 +17,7 @@ public class StringAlies extends AbstractTypeAlise<String> implements
 	public TypeAlies<String> newInstance(String name, String value, String table) {
 		this.attr = new Attribute<String>(name, value);
 		this.tableAlise = table;
-		TypeAlies<java.lang.String> string = new StringAlies();
-		return string;
+		return this;
 	}
 
 }
