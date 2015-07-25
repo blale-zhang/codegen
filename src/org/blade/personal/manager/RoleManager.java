@@ -13,7 +13,7 @@ import org.blade.personal.utils.Pager;
  *
  */
 public interface RoleManager {
-	public  static final Logger log = Logger.getLogger(RoleManager.class.getName());
+	public  static final Logger LOG = Logger.getLogger(RoleManager.class.getName());
 
 	/**
 	 * Add a role with a  <B>system role</B> class instace.

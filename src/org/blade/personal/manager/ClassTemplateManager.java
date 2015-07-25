@@ -13,7 +13,7 @@ import org.blade.personal.utils.Pager;
  *
  */
 public interface ClassTemplateManager {
-	public  static final Logger log = Logger.getLogger(ClassTemplateManager.class.getName());
+	public  static final Logger LOG = Logger.getLogger(ClassTemplateManager.class.getName());
 
 	/**
 	 * 保存类模板

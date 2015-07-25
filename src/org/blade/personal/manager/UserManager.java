@@ -12,7 +12,7 @@ import org.blade.personal.utils.Pager;
  *
  */
 public interface UserManager {
-	public  static final Logger log = Logger.getLogger(UserManager.class.getName());
+	public  static final Logger LOG = Logger.getLogger(UserManager.class.getName());
 
 	/**
 	 * save user

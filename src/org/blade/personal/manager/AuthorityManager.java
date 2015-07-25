@@ -15,7 +15,7 @@ import org.blade.personal.utils.Pager;
  */
 public interface AuthorityManager {
 
-	public  static final Logger log = Logger.getLogger(AuthorityManager.class.getName());
+	public  static final Logger LOG = Logger.getLogger(AuthorityManager.class.getName());
 	/**
 	 * Save authority 
 	 * @param authority 

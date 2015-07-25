@@ -15,7 +15,7 @@ import org.blade.personal.utils.Pager;
  */
 
 public interface UrlManager {
-	public  static final Logger log = Logger.getLogger(UrlManager.class.getName());
+	public  static final Logger LOG = Logger.getLogger(UrlManager.class.getName());
 
 	int addUrl(SystemUrl url);
 

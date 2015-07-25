@@ -14,7 +14,7 @@ import org.blade.personal.utils.Pager;
  *
  */
 public interface ModelDefinedManager {
-	public  static final Logger log = Logger.getLogger(ModelDefinedManager.class.getName());
+	public  static final Logger LOG = Logger.getLogger(ModelDefinedManager.class.getName());
 
 	/**
 	 * 保存模型
