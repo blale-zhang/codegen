@@ -25,7 +25,9 @@ public interface DdlKeyWord{
 	public final String LT = " < ";
 	public final String DOT = ".";
 	public final String WHERE_ONE_EQ_ONE = " 1=1 ";
-
+	public final String PRECENT_CODE = "%";
+	public final String GTOEQ = ">=";
+	public final String LTOEQ = "<=";
 
 	public final String JOIN = " join ";
 	public final String LEFT_JOIN = " left join ";
@@ -102,4 +104,6 @@ public interface DdlKeyWord{
 	public final String SET_CLAUSE = " {SET_CLAUSE} ";
 
 
+	public final String UNION = " union ";
+	public final String UNION_ALL = " union all ";
 }

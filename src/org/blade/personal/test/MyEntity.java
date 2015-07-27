@@ -17,7 +17,7 @@ import org.blade.personal.framework.orm.base.StringAlies;
 public class MyEntity extends AbstractEntityAlies<Blade>{
 
 	@Id
-	@Column(dataType = "int",javaType = JavaTypeEnum.INTEGER, name = "id_")
+	@Column(dataType = "int",javaType = JavaTypeEnum.INTEGER, name = "id")
 	public IntegerAlies id;
 	
 	@Column(dataType = "varchar",javaType = JavaTypeEnum.STRING, name = "name")

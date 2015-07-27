@@ -7,6 +7,7 @@ package org.blade.personal.framework.dsl;
  */
 public interface Clause {
 
+
 	public void setClause(Clause clause);
 	
 	public String build();

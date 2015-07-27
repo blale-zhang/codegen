@@ -13,18 +13,18 @@ import org.blade.personal.framework.orm.TypeAlies;
 public class MySQLSql extends AbstractSql implements Sql {
 
 	
-	@Override
-	public Sql and(Sql clause) {
-		// TODO Auto-generated method stub
-		return null;
+	public MySQLSql() {
+		// TODO Auto-generated constructor stub
 	}
-
-	@Override
-	public Sql from(Sql clause) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	/**
+	 * 构造MySQL 的 SQL语句。一般用于子查询的SQL
+	 * @param alise
+	 */
+	public MySQLSql(String alise) {
+		this.alise = alise;
 	}
-
+	
 	@Override
 	public Sql list(TypeAlies... alies) {
 		// TODO Auto-generated method stub
@@ -37,16 +37,12 @@ public class MySQLSql extends AbstractSql implements Sql {
 		return null;
 	}
 
-	@Override
-	public Sql union(Sql clause) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Sql unionAll(Sql clause) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }

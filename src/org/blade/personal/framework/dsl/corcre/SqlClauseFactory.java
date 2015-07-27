@@ -9,5 +9,10 @@ import org.blade.personal.framework.dsl.Clause;
  */
 public interface SqlClauseFactory {
 
+	/**
+	 * 生产子句
+	 * @param clause
+	 * @return
+	 */
 	Clause build(StringBuilder clause);
 }

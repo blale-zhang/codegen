@@ -38,15 +38,15 @@ public abstract class AbstractEntityAlies<T> implements EntityAlies<T> {
 			try {
 				switch(column.javaType()){
 					case INTEGER:field.setAccessible(true);
-						field.set(this,new IntegerAlies().newInstance(column.name(), 0, this.alies));
+						field.set(this,new IntegerAlies().newInstance(column.name(), 0, this.tableName, this.alies, column.javaType()));
 						field.setAccessible(false);
 					break;
 					case STRING: field.setAccessible(true);
-						field.set(this, new StringAlies().newInstance(column.name(), "", this.alies));
+						field.set(this, new StringAlies().newInstance(column.name(), "", this.tableName, this.alies, column.javaType()));
 						field.setAccessible(false);
 					break;
 					case FLOAT: field.setAccessible(true);
-					field.set(this, new FloatAlies().newInstance(column.name(), 0.0f, this.alies));
+					field.set(this, new FloatAlies().newInstance(column.name(), 0.0f, this.tableName, this.alies, column.javaType()));
 					field.setAccessible(false);
 					break;
 				default:
@@ -83,7 +83,6 @@ public abstract class AbstractEntityAlies<T> implements EntityAlies<T> {
 	
 	@Override
 	public String getAlise() {
-		// TODO Auto-generated method stub
 		return this.alies;
 	}
 }
