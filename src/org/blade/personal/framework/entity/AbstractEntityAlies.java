@@ -1,10 +1,12 @@
 package org.blade.personal.framework.entity;
 
 import java.lang.reflect.Field;
+import java.util.Date;
 
 import org.blade.personal.framework.components.annotation.Column;
 import org.blade.personal.framework.components.annotation.Table;
 import org.blade.personal.framework.orm.EntityAlies;
+import org.blade.personal.framework.orm.base.DateAlies;
 import org.blade.personal.framework.orm.base.FloatAlies;
 import org.blade.personal.framework.orm.base.IntegerAlies;
 import org.blade.personal.framework.orm.base.StringAlies;
@@ -49,6 +51,11 @@ public abstract class AbstractEntityAlies<T> implements EntityAlies<T> {
 					field.set(this, new FloatAlies().newInstance(column.name(), 0.0f, this.tableName, this.alies, column.javaType()));
 					field.setAccessible(false);
 					break;
+					case DATE: 
+						field.setAccessible(true);//TODO ?
+						field.set(this, new DateAlies().newInstance(column.name(),new Date(),this.tableName,this.alies,column.javaType()));
+						field.setAccessible(false);
+					    break;
 				default:
 					break;
 				}
